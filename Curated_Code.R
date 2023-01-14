@@ -483,17 +483,17 @@ library(org.Mm.eg.db)
 # cc1
 GO_results_cc1<-enrichGO(gene = cc1_genenames,OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "MF") # for the function: the gene list to study, database with gene information, the type of gene name, and the tipe of function analyzed in this case is MF: molecular function
 cc1_go_res<-as.data.frame(GO_results_cc1) # results in a table
-fit_cc1<-plot(barplot(GO_results_cc1,showCategory = 20)) # ploting the results
+fit_cc1<-plot(barplot(GO_results_cc1,showCategory = 10, font.size = 15))# ploting the results
 
 # cc2
 GO_results_cc2<-enrichGO(gene = cc2_genenames,OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "MF")
 cc2_go_res<-as.data.frame(GO_results_cc2)
-fit<-plot(barplot(GO_results_cc2,showCategory = 20))
+fit<-plot(barplot(GO_results_cc2,showCategory = 20,  font.size = 15))
 
 # cc1_cc2_common
-GO_results_cccomon<-enrichGO(gene = common_cc1_cc2,OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "MF")
-cccommon<-as.data.frame(GO_results_cccomon)
-fit<-plot(barplot(GO_results_cccomon,showCategory = 20))
+GO_results_comon<-enrichGO(gene = common_cc1_cc2,OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "MF")
+cc1_cc2_common<-as.data.frame(GO_results_comon)
+fit<-plot(barplot(GO_results_cccomon,showCategory = 10,font.size = 10))
 
 # hs2
 hs2_genenames<-c(hs2_DEG$SYMBOL)
@@ -504,13 +504,13 @@ fihs2<-plot(barplot(GO_results_hs2,showCategory = 5))
 # mm2
 mm2_genenames<-c(mm2_DEG$SYMBOL)
 GO_results_mm2<-enrichGO(gene = mm2_genenames,OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "MF")
-fit_mm2<-plot(barplot(GO_results_mm2,showCategory = 20))
+fit_mm2<-plot(barplot(GO_results_mm2,showCategory = 10, font.size = 15))
 # mm2_cc1 common
 GO_results_mm2_cc1<-enrichGO(gene = common_mm2_cc1,OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "MF")
-fit_mm2_cc1<-plot(barplot(GO_results_mm2_cc1,showCategory = 20))
+fit_mm2_cc1<-plot(barplot(GO_results_mm2_cc1,showCategory = 20, font.size = 15))
 # mm2_hs2_common
 GO_results_mm2_hs2<-enrichGO(gene = common_mm2_hs2,OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "MF")
-fit_mm2<-plot(barplot(GO_results_mm2_hs2,showCategory = 10, fill = "#f1c232"))
+fit_mm2<-plot(barplot(GO_results_mm2_hs2,showCategory = 10)
 # 3 common genes between cc1_hs2_mm2
 GO_3genes<-enrichGO(gene = c("FAM167B","RAB29","LYNX1"),OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "MF")
 fit_mm2_cc1<-plot(barplot(GO_3genes,showCategory = 5))
